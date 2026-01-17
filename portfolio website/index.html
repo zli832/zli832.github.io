@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Li | Data Science Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee; 
+            --secondary: #4cc9f0; 
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Header Area - */
+        header {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-text h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin: 10px 0;
+        }
+
+        .contact-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 15px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover { color: var(--secondary); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 260px 1fr 280px;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 25px;
+            transition: 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+
+
+        .profile-photo {
+            width: 100%;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.2);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: var(--secondary);
+            margin-left: 10px;
+            opacity: 0.3;
+        }
+
+        .exp-item { margin-bottom: 25px; }
+        .exp-title { font-weight: 700; color: var(--text-dark); display: block; }
+        .exp-sub { color: var(--primary); font-size: 0.9rem; font-weight: 600; }
+        
+        .project-visual {
+            background: #f1f5f9;
+            height: 140px;
+            border-radius: 12px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            border: 1px dashed #cbd5e0;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            margin: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-text">
+            <h1>Lucas Li</h1>
+            <p class="tagline">Aspiring Data Analyst / Business Analyst</p>
+            <div class="contact-links">
+                <a href="mailto:lucasli12100@gmail.com">Email</a>
+                <a href="https://linkedin.com">LinkedIn</a>
+                <a href="https://github.com/zli832">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid">
+        <aside>
+            <div class="card">
+                <img src="profile_photo.jpeg" alt="Lucas Li" class="profile-photo">
+                <h2>Education</h2>
+                <p><strong>Emory University</strong><br>
+                <span style="font-size: 0.9rem; color: var(--text-light);">B.A. in Econ & Math</span></p>
+            </div>
+            <div class="card">
+                <h2>Skills</h2>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Machine Learning</div>
+                <div class="skill-tag">Tableau</div>
+                <div class="skill-tag">Power BI</div>
+                <div class="skill-tag">Excel</div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="card">
+                <h2>Professional Experience</h2>
+                <div class="exp-item">
+                    <span class="exp-title">KCC Capital Partners</span>
+                    <span class="exp-sub">Lead Data Scientist</span>
+                    <p style="font-size: 0.9rem;">Building AI-adopter classification models using XGBoost and SHAP for investment insights.</p>
+                </div>
+                <div class="exp-item">
+                    <span class="exp-title">Forma Paideia Consulting</span>
+                    <span class="exp-sub">Product Data Analyst</span>
+                    <p style="font-size: 0.9rem;">Optimized ranking models via A/B testing, driving +0.7% CTR and +3% retention.</p>
+                </div>
+ <div class="exp-item">
+                    <span class="exp-title">GUORONG Securities</span>
+                    <span class="exp-sub">Data Analyst Intern</span>
+                    <p style="font-size: 0.9rem;">Built Python-based machine learning models for 300+ bond returns, and Designed SQL and Python-based ETL pipelines to clean, transform, and feature-engineer raw corporate bonds datasets, enhancing the model accuracy by 6.5% </p>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="card">
+                <h2>Featured Projects</h2>
+<div class="exp-item">
+    <span class="exp-title">
+        <a href="project-commuting.html" style="text-decoration: none; color: inherit;">
+            U.S. Commuting Behavior Analysis ↗
+        </a>
+    </span>
+    <p style="font-size: 0.85rem;">Click to see detailed statistical analysis and bimodal distribution insights.</p>
+    <a href="project-commuting.html">
+        <div class="project-visual" style="cursor: pointer;">📊 View Case Study</div>
+    </a>
+</div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+</body>
+</html>
