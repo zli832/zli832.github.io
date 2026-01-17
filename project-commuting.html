@@ -36,7 +36,9 @@
 
         <div class="case-section">
             <h3>1. Introduction and Motivation</h3>
-            <p>Commuting is a daily necessity that is often shaped by education, income, and social status, all of which can influence transportation choices and travel time. Higher-income and well-educated individuals typically have more flexibility in selecting housing and commuting modes, whereas lower-income workers often face longer, less efficient commutes due to affordability constraints. </p><p>We aim to gain a deeper understanding of these disparities, as this knowledge is essential for policymakers and urban planners seeking to enhance transit equity and economic mobility. In addition, we hope to explore how these socioeconomic factors shape commuting behaviors and have a broader impact on urban accessibility, as well as how certain commuting behaviors, such as vehicle purchases and carpooling, relate to the sustainability efforts of each individual.</p>
+            <p>Commuting is a daily necessity that is often shaped by education, income, and social status, all of which can influence transportation choices and travel time. Higher-income and well-educated individuals typically have more flexibility in selecting housing and commuting modes, whereas lower-income workers often face longer, less efficient commutes due to affordability constraints. </p>
+
+<p>We aim to gain a deeper understanding of these disparities, as this knowledge is essential for policymakers and urban planners seeking to enhance transit equity and economic mobility. In addition, we hope to explore how these socioeconomic factors shape commuting behaviors and have a broader impact on urban accessibility, as well as how certain commuting behaviors, such as vehicle purchases and carpooling, relate to the sustainability efforts of each individual.</p>
         </div>
 
         <div class="case-section">
@@ -51,7 +53,7 @@
 
         <div class="case-section">
             <h3>3. Exploratory Data Analysis</h3>
-            <img src="distribution_plots.png" alt="Distribution Analysis">
+            <img src="portfolio/distribution_plots.png" alt="Distribution Analysis">
             <div class="insight-box">
                 <strong>Key Findings:</strong>
                 <ul>
@@ -65,34 +67,41 @@
                 </ul>
             </div>
             
-            <img src="heatmap.png" alt="Pearson Correlation Heatmap">
-            <p> We computed the Pearson correlation matrix for six selected variables related to household characteristics and transportation, and visualized the correlations using a heatmap.</p><p>The heatmap reveals a positive correlation between vehicle ownership and both household income and commuting time, suggesting that higher-income households and those with longer commutes tend to own more vehicles. Conversely, vehicle ownership is negatively correlated with education level and population density, implying that individuals with more education or those living in denser areas may rely less on personal vehicles.</p>
+            <img src="portfolio/heatmap.png" alt="Pearson Correlation Heatmap">
+            <p> We computed the Pearson correlation matrix for six selected variables related to household characteristics and transportation, and visualized the correlations using a heatmap.</p>
+
+<p>The heatmap reveals a positive correlation between vehicle ownership and both household income and commuting time, suggesting that higher-income households and those with longer commutes tend to own more vehicles. Conversely, vehicle ownership is negatively correlated with education level and population density, implying that individuals with more education or those living in denser areas may rely less on personal vehicles.</p>
 
 <img src="carpool.png" alt="Carpool Percentage by Region">
 <img src="average_transit.jpeg" alt="Average Transit Time by Region">
 
 
 <p>We categorized the Region variable into four groups: Northeast, Midwest, South, and West. Histogram analysis suggests that individuals in the South and West are more likely to carpool, while those in the Northeast and South tend to have longer commute times. These patterns are consistent with observed differences in population density across regions. However, due to multicollinearity concerns, we excluded DENSITY from the regression models to avoid distortion in coefficient estimates.</p>
-<img src="US_Region.jpeg" alt="US Region by Region Variables">
+<img src="portfolio/US_Region.jpeg" alt="US Region by Region Variables">
 
 
         </div>
 
         <div class="case-section">
             <h3>4. Regression Models and Results</h3>
-            <img src="model1.jpeg" alt="Regression Model 1 Summary">
-            <img src="model2.jpeg" alt="Regression Model 2 Summary">
-            <img src="model3.jpeg" alt="Regression Model 3 Summary">
-            <img src="model4.jpeg" alt="Regression Model 4 Summary">
+            <img src="portfolio/model1.jpeg" alt="Regression Model 1 Summary">
+            <img src="portfolio/model2.jpeg" alt="Regression Model 2 Summary">
+            <img src="portfolio/model3.jpeg" alt="Regression Model 3 Summary">
+            <img src="portfolio/model4.jpeg" alt="Regression Model 4 Summary">
             <div class="insight-box">
                 <strong>Model Performance & Insights:</strong>
                 <ul>
                     <li><strong>Income Effect:</strong> Model 1 includes log household income and a binary variable for sex. The coefficient on log(HHINCOME) is 0.467 (p < 0.01), indicating that a 1% increase in income is associated with a 0.00467 increase in vehicle ownership. The coefficient on SEX is -0.064 (p < 0.01), suggesting that female-headed households tend to own fewer vehicles, holding income constant.</li>
-                    <li>Model 2 adds region fixed effects (with the Midwest as the reference group). Compared to the Midwest, households in the Northeast and South own fewer vehicles (-0.231 and -0.047), while those in the West own slightly more (+0.026). All coefficients are significant at the 1% level.</li>
-                    <li>Model 3 introduces commute time (TRANTIME), which enters positively and significantly (0.0006, p < 0.01), implying that longer commutes are associated with slightly higher vehicle ownership.</li>
-                    <li>Model 4 incorporates all previous variables plus a carpooling indicator (CARPOOL). The coefficient on CARPOOL is negative (-0.0046) but not statistically significant (p = 0.145), indicating that carpooling does not meaningfully predict vehicle ownership after controlling for other factors.</li>
+                    <li>Model 2 adds region fixed effects (with the Midwest as the reference group). Compared to the Midwest, households in the Northeast and South own fewer vehicles (-0.231 and -0.047), while those in the West own slightly more (+0.026). All coefficients are significant at the 1% level.
+</li>
+                    <li>Model 3 introduces commute time (TRANTIME), which enters positively and significantly (0.0006, p < 0.01), implying that longer commutes are associated with slightly higher vehicle ownership.
+</li>
+                    <li>Model 4 incorporates all previous variables plus a carpooling indicator (CARPOOL). The coefficient on CARPOOL is negative (-0.0046) but not statistically significant (p = 0.145), indicating that carpooling does not meaningfully predict vehicle ownership after controlling for other factors.
+</li>
 
- <li>Multicollinearity diagnostics show that most Variance Inflation Factors (VIFs) are below the standard threshold of 10, though log(HHINCOME) and SEX show moderately elevated VIFs (14.19 and 9.22), indicating some collinearity but not enough to undermine the model.</li>Conclusion: Household income, regional location, and commuting patterns are significant predictors of vehicle ownership, while carpooling shows no robust effect.</li>
+ <li>Multicollinearity diagnostics show that most Variance Inflation Factors (VIFs) are below the standard threshold of 10, though log(HHINCOME) and SEX show moderately elevated VIFs (14.19 and 9.22), indicating some collinearity but not enough to undermine the model.</li>
+
+Conclusion: Household income, regional location, and commuting patterns are significant predictors of vehicle ownership, while carpooling shows no robust effect.</li>
 
 
                 </ul>
@@ -109,7 +118,8 @@
 
                 <li><strongRegional Planning:</strong>Given the big regional differences, transportation planning should be tailored to local contexts. For example, promoting car alternatives (e.g., transit, biking) in the Northeast may be more feasible than in the South or Midwest.</li>
 
-                <li><strong>Commute-Responsive Policies:</strong> While commute time has a small effect, long commuting households may benefit from targeted incentives for efficient vehicle use, carpooling platforms, or telecommuting support.</strong> rather than ownership counts.</li>
+                <li><strong>Commute-Responsive Policies:</strong> While commute time has a small effect, long commuting households may benefit from targeted incentives for efficient vehicle use, carpooling platforms, or telecommuting support.
+</strong> rather than ownership counts.</li>
 
 <li><strong>Reassessing Carpooling's Role:</strong> Since carpooling is not significantly associated with fewer vehicles, policymakers should reevaluate its effectiveness as a tool for reducing household vehicle counts. Efforts might focus instead on reducing vehicle miles traveled (VMT) rather than ownership.</li>
             </ul>
