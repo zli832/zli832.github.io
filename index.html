@@ -30,7 +30,7 @@
             padding: 50px 20px;
         }
 
-        /* Header Area - */
+        /* Header Area */
         header {
             background: white;
             padding: 40px;
@@ -67,9 +67,10 @@
 
         .contact-links a:hover { color: var(--secondary); }
 
+        /* Grid Layout: Adjusted to 2 columns since center is removed */
         .grid {
             display: grid;
-            grid-template-columns: 260px 1fr 280px;
+            grid-template-columns: 300px 1fr;
             gap: 30px;
         }
 
@@ -85,7 +86,6 @@
         }
 
         .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
-
 
         .profile-photo {
             width: 100%;
@@ -114,7 +114,7 @@
             opacity: 0.3;
         }
 
-        .exp-item { margin-bottom: 15px; }
+        .exp-item { margin-bottom: 20px; }
         .exp-title { font-weight: 700; color: var(--text-dark); display: block; }
         .exp-sub { color: var(--primary); font-size: 0.9rem; font-weight: 600; }
         
@@ -142,12 +142,13 @@
             font-weight: 600;
         }
 
-        @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <div class="container">
+    
     <header>
         <div class="header-text">
             <h1>Lucas Li</h1>
@@ -161,6 +162,7 @@
     </header>
 
     <div class="grid">
+        
         <aside>
             <div class="card">
                 <img src="portfolio/profile_photo.jpeg" alt="Lucas Li" class="profile-photo">
@@ -168,6 +170,7 @@
                 <p><strong>Emory University</strong><br>
                 <span style="font-size: 0.9rem; color: var(--text-light);">B.A. in Econ & Math</span></p>
             </div>
+            
             <div class="card">
                 <h2>Skills</h2>
                 <div class="skill-tag">Python</div>
@@ -181,80 +184,66 @@
 
         <main>
             <div class="card">
-                <h2>Professional Experience</h2>
+                <h2>Featured Projects</h2>
+
                 <div class="exp-item">
-                    <span class="exp-title">KCC Capital Partners</span>
-                    <span class="exp-sub">Lead Data Scientist</span>
-                    <p style="font-size: 0.9rem;">Building AI-adopter classification models using XGBoost and SHAP for investment insights.</p>
+                    <span class="exp-title">
+                        <a href="project-commuting.html" style="text-decoration: none; color: inherit;">
+                            U.S. Commuting Behavior Analysis ↗
+                            <span class="exp-sub">Python Exploratory Analysis | Statistical Analysis</span>
+                        </a>
+                    </span>
+                    <p style="font-size: 0.85rem;">Click to see detailed statistical analysis and bimodal distribution insights.</p>
+                    <a href="project-commuting.html" style="text-decoration: none;">
+                        <div class="project-visual" style="cursor: pointer;">📊 View Case Study</div>
+                    </a>
                 </div>
+
                 <div class="exp-item">
-                    <span class="exp-title">Forma Paideia Consulting</span>
-                    <span class="exp-sub">Product Data Analyst</span>
-                    <p style="font-size: 0.9rem;">Optimized ranking models via A/B testing, driving +0.7% CTR and +3% retention.</p>
+                    <span class="exp-title">BMI & Myocardial Infarction Risk</span>
+                    <span class="exp-sub">R | Framingham Heart Study</span>
+                    <p style="font-size: 0.85rem;">Investigated obesity (BMI > 30) as a cardiovascular risk factor using statistical analysis on self-reported hospitalization data.</p>
+                    <a href="https://github.com/zli832/Analysis-of-BMI-and-Myocardial-Infarction-Risk-Using-the-Framingham-Heart-Study" class="project-link" target="_blank">View Repo ↗</a>
                 </div>
- <div class="exp-item">
-                    <span class="exp-title">GUORONG Securities</span>
-                    <span class="exp-sub">Data Analyst Intern</span>
-                    <p style="font-size: 0.9rem;">Built Python-based machine learning models for 300+ bond returns, and Designed SQL and Python-based ETL pipelines to clean, transform, and feature-engineer raw corporate bonds datasets, enhancing the model accuracy by 6.5% </p>
+
+                <div class="exp-item">
+                    <span class="exp-title">U.S. Air Travel Trends Forecasting</span>
+                    <span class="exp-sub">Python | ARIMA & Web Scraping</span>
+                    <p style="font-size: 0.85rem;">Developed a time-series model to analyze pre/post-COVID air travel recovery using airport-level passenger data.</p>
+                    <a href="https://github.com/zli832/Analysis-of-BMI-and-Myocardial-Infarction-Risk-Using-the-Framingham-Heart-Study" class="project-link" target="_blank">View Repo ↗</a>
                 </div>
+
+                <div class="exp-item">
+                    <span class="exp-title">Insurance Premium Prediction</span>
+                    <span class="exp-sub">Python | XGBoost & Scikit-learn</span>
+                    <p style="font-size: 0.85rem;">Built a supervised ML pipeline with XGBoost regression. Achieved high accuracy through feature engineering and hyperparameter tuning.</p>
+                    <a href="https://github.com/zli832/Kaggle-Project-Insurance-Premium-Prediction-Using-Tabular-Machine-Learning-Python-" class="project-link" target="_blank">View Repo ↗</a>
+                </div>
+
+                <div class="exp-item">
+                    <span class="exp-title">Education & Fertility in Brazil</span>
+                    <span class="exp-sub">Python | IPUMS Microdata Analysis</span>
+                    <p style="font-size: 0.85rem;">Conducted t-tests and regression on 2010 census data to measure how education and racial disparities affect childbirth rates.</p>
+                    <a href="https://github.com/zli832/Python-Analysis-of-the-Correlation-Between-Education-and-Fertility-in-Brazil-2010" class="project-link" target="_blank">View Repo ↗</a>
+                </div>
+
+                <div class="exp-item">
+                    <span class="exp-title">Bond Market Returns Forecasting</span>
+                    <span class="exp-sub">Python | LightGBM & Random Forest</span>
+                    <p style="font-size: 0.85rem;">Engineered predictive signals (moving averages, volatility) to forecast U.S. corporate bond returns via ML ensembles.</p>
+                    <a href="https://github.com/zli832/Machine-Learning-Based-Forecasting-of-Bond-Market-Returns" class="project-link" target="_blank">View Repo ↗</a>
+                </div>
+
             </div>
         </main>
 
-        <aside>
-            <div class="card">
-<h2>Featured Projects</h2>
+    </div> 
 
-<div class="exp-item">
-    <span class="exp-title">
-        <a href="project-commuting.html" style="text-decoration: none; color: inherit;">
-            U.S. Commuting Behavior Analysis ↗
-            <span class="exp-sub">Python Exploratory Analysis | Statistical Analysis</span>
-        </a>
-    </span>
-    <p style="font-size: 0.85rem;">Click to see detailed statistical analysis and bimodal distribution insights.</p>
-    <a href="project-commuting.html" style="text-decoration: none;">
-        <div class="project-visual" style="cursor: pointer;">📊 View Case Study</div>
-    </a>
-</div> <div class="exp-item">
-    <span class="exp-title">BMI & Myocardial Infarction Risk</span>
-    <span class="exp-sub">R | Framingham Heart Study</span>
-    <p style="font-size: 0.85rem;">Investigated obesity (BMI > 30) as a cardiovascular risk factor using statistical analysis on self-reported hospitalization data.</p>
-    <a href="https://github.com/zli832/Analysis-of-BMI-and-Myocardial-Infarction-Risk-Using-the-Framingham-Heart-Study" class="project-link" target="_blank">View Repo ↗</a>
+    <footer style="text-align: center; padding: 40px 0; color: #94a3b8; font-size: 0.8rem;">
+        &copy; 2024 Lucas Li. Built with clean code & data insights.
+    </footer>
+
 </div>
-
-<div class="exp-item">
-    <span class="exp-title">U.S. Air Travel Trends Forecasting</span>
-    <span class="exp-sub">Python | ARIMA & Web Scraping</span>
-    <p style="font-size: 0.85rem;">Developed a time-series model to analyze pre/post-COVID air travel recovery using airport-level passenger data.</p>
-    <a href="https://github.com/zli832/Analysis-of-BMI-and-Myocardial-Infarction-Risk-Using-the-Framingham-Heart-Study" class="project-link" target="_blank">View Repo ↗</a>
-</div>
-
-<div class="exp-item">
-    <span class="exp-title">Insurance Premium Prediction</span>
-    <span class="exp-sub">Python | XGBoost & Scikit-learn</span>
-    <p style="font-size: 0.85rem;">Built a supervised ML pipeline with XGBoost regression. Achieved high accuracy through feature engineering and hyperparameter tuning.</p>
-    <a href="https://github.com/zli832/Kaggle-Project-Insurance-Premium-Prediction-Using-Tabular-Machine-Learning-Python-" class="project-link" target="_blank">View Repo ↗</a>
-</div>
-
-<div class="exp-item">
-    <span class="exp-title">Education & Fertility in Brazil</span>
-    <span class="exp-sub">Python | IPUMS Microdata Analysis</span>
-    <p style="font-size: 0.85rem;">Conducted t-tests and regression on 2010 census data to measure how education and racial disparities affect childbirth rates.</p>
-    <a href="https://github.com/zli832/Python-Analysis-of-the-Correlation-Between-Education-and-Fertility-in-Brazil-2010" class="project-link" target="_blank">View Repo ↗</a>
-</div>
-
-<div class="exp-item">
-    <span class="exp-title">Bond Market Returns Forecasting</span>
-    <span class="exp-sub">Python | LightGBM & Random Forest</span>
-    <p style="font-size: 0.85rem;">Engineered predictive signals (moving averages, volatility) to forecast U.S. corporate bond returns via ML ensembles.</p>
-    <a href="https://github.com/zli832/Machine-Learning-Based-Forecasting-of-Bond-Market-Returns" class="project-link" target="_blank">View Repo ↗</a>
-</div>
-
-</div> </aside> 
-
-</div> <footer style="text-align: center; padding: 40px 0; color: #94a3b8; font-size: 0.8rem;">
-    &copy; 2024 Lucas Li. Built with clean code & data insights.
-</footer>
 
 </body>
 </html>
